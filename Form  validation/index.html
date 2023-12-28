@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Valitation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #form  a{
+            background-color: rgb(84, 156, 132);
+            color: white;
+            border: 1px solid rgb(84, 156, 132);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+            font-size: large;
+            width: 380px;
+        }
+        .submit .btn{
+            padding: 7px;
+            margin: 20px 0;
+            width: 100%;
+            font-weight: 700;
+            font-size: 16px;
+            background-color: rgb(15, 225, 61);
+            color: white;
+            border: none;    
+            border-radius: 5px;
+        }
+
+        .popup{
+            width:300px;
+            background:green;
+            color: white;
+            border-radius: 6px;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0.1);
+            padding: 25px;
+            visibility: hidden;
+            transition: transform 0.4s ,top 0.4s;
+
+        }
+
+        .open-popup{
+            visibility: visible;
+            top: 25%;
+            transform: translate(-50%,50%) scale(1);
+        }
+
+        .popup button{
+            padding: 5px 20px;
+            color: rgb(16, 181, 110);
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        h5{
+            font-size: 15px;
+        }
+
+ 
+
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <h1>Register Form</h1>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+                <div class="error"></div>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <div class="error"></div>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-group">
+                <label for="cpassword">Conform Password</label>
+                <input type="password" id="cpassword" name="cpassword">
+                <div class="error"></div>
+            </div>
+            <div class="submit">
+                <button type="button" class="btn" onclick="openPopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <h2>Thank You!</h2>
+                    <h5>Your details has been successfully submitted.</h5>
+                    <button type="button" onclick="closePopup()" id="green">OK</button>
+                </div>
+            <div>
+        </form>
+    </div>
+</body>
+<script>
+    let popup=document.getElementById("popup");
+
+function openPopup(){
+    popup.classList.add("open-popup");
+
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup");
+    
+}
+  
+</script>
+</html>
